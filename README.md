@@ -1,2 +1,6 @@
 # 42_avaj-launcher
-Simple weather simulator with basic java
+
+
+
+A simple aircraft simulator for learning Java.
+

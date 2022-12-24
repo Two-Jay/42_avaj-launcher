@@ -1,8 +1,9 @@
 JAVAC = javac
-FILE = scenario.txt
+FILE = ./example/senario.txt
 
 all :
 	@$(MAKE) compile
+	@$(MAKE) run
 
 compile :
 	find * -name "*.java" > sources.txt
@@ -16,4 +17,4 @@ run :
 
 re :
 	@$(MAKE) clean
-	@$(MAKE) all
+	@$(MAKE) alls

@@ -18,7 +18,7 @@ public class JetPlane extends Aircraft implements Flyable {
 
     private String buildSpeakMessage() {
         return this.type + "#" + this.name + "(" + this.capitalType + this.id + "): " + this.getByWeather(WeatherProvider.getCurrentWeather(this.coordinates)) 
-            + " (" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")" + "\n";
+            + " (" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")";
     }
 
     public void speak() {

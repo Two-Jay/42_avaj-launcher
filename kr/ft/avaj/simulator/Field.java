@@ -2,36 +2,22 @@ package kr.ft.avaj.simulator;
 
 import java.util.ArrayList;
 
-enum Weather {
-    RAIN, FOG, SUN, SNOW
-}
-
 public class Field {
     int height;
     int width;
-    ArrayList< ArrayList<Weather>> weather = new ArrayList< ArrayList<Weather>>();
-    
-    Field(int height, int width) {
+    ArrayList<ArrayList<String>> weather = new ArrayList<ArrayList<String>>();
+
+    Field(int height, int width, String[] weather) {
         this.height = height;
         this.width = width;
     
         for (int i = 0; i < height; i++) {
-            ArrayList<Weather> row = new ArrayList<Weather>();
+            ArrayList<String> row = new ArrayList<String>();
             for (int j = 0; j < width; j++) {
-                Weather tmp = Weather.SUN;
-                int rand = (int)((Math.random() * 10000) % 6);
-                if (rand == 5) {
-                    tmp = Weather.SNOW;
-                } else if (rand == 4) {
-                    tmp = Weather.FOG;
-                } else if (rand == 3) {
-                    tmp = Weather.RAIN;
-                } else {
-                    tmp = Weather.SUN;
-                }
-                row.add(tmp);
+                int rand = (int)(Math.random() * weather.length);
+                row.add(weather[rand]);
             }
-            weather.add(row);
+            this.weather.add(row);
         }
     }
 
@@ -43,10 +29,18 @@ public class Field {
         return this.width;
     }
 
+    public String getWeather(int x, int y) {
+        return weather.get(x).get(y);
+    }
+
+    public String getWeather(Coordinates coordinates) {
+        return weather.get(coordinates.getLongitude()).get(coordinates.getLatitude());
+    }
+
     public void printWeather() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.print(weather.get(i).get(j) + " ");
+                System.out.print(this.getWeather(j, i) + " ");
             }
             System.out.println();
         }

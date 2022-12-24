@@ -17,4 +17,4 @@ run :
 
 re :
 	@$(MAKE) clean
-	@$(MAKE) alls
+	@$(MAKE) all

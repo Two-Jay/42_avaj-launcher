@@ -9,7 +9,6 @@ public class Simulator {
     private static ArrayList<String> readFile(String filepath) throws FileNotFoundException {
         File file = new File(filepath);
         Scanner scanner = new Scanner(file);
-        System.err.println("Reading file: " + filepath);
         ArrayList<String> lines = new ArrayList<String>();
 
         while (scanner.hasNextLine()) {

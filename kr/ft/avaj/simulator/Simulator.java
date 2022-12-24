@@ -2,7 +2,6 @@ package kr.ft.avaj.simulator;
 
 import java.util.ArrayList;
 
-
 public class Simulator {
     private static ArrayList<String> readFile(String path) {
         Parser parser = new Parser(path);
@@ -37,16 +36,11 @@ public class Simulator {
 
         int simulationCount = parseSimulationCount(lines);
         ArrayList<Flyable> flyables = generateAircrafts(lines);;
-        AircraftFactory aircraftFactory = new AircraftFactory();
-        WeatherProvider weatherProvider = WeatherProvider.getProvider();
-
-        weatherProvider.printField();
 
         for (int i = 0; i < simulationCount; i++) {
             for (Flyable flyable : flyables) {
                 flyable.speak();
             }
         }
-
     }
 };

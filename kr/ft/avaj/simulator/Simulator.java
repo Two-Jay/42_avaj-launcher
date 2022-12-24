@@ -16,10 +16,6 @@ public class Simulator {
             lines.add(scanner.nextLine());
         }
         scanner.close();
-
-        for (String line : lines) {
-            System.err.println(line);
-        }
         return lines;
     }
 

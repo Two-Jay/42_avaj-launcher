@@ -18,7 +18,18 @@ public class Field {
         for (int i = 0; i < height; i++) {
             ArrayList<Weather> row = new ArrayList<Weather>();
             for (int j = 0; j < width; j++) {
-                row.add(Weather.SUN);
+                Weather tmp = Weather.SUN;
+                int rand = (int)((Math.random() * 10000) % 6);
+                if (rand == 5) {
+                    tmp = Weather.SNOW;
+                } else if (rand == 4) {
+                    tmp = Weather.FOG;
+                } else if (rand == 3) {
+                    tmp = Weather.RAIN;
+                } else {
+                    tmp = Weather.SUN;
+                }
+                row.add(tmp);
             }
             weather.add(row);
         }

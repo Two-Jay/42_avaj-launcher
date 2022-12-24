@@ -1,1 +1,1 @@
-kr/42seoul/avaj-launcher/simulator/srcs/Main.java
+kr/ft/avaj/simulator/Simulator.java

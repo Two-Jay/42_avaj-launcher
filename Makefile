@@ -1,8 +1,8 @@
 JAVAC = javac
+FILE = scenario.txt
 
 all :
 	@$(MAKE) compile
-	@$(MAKE) run
 
 compile :
 	find * -name "*.java" > sources.txt
@@ -12,4 +12,8 @@ clean :
 	find * -name "*.class" -delete
 
 run :
-	java -cp ${CLASSPATH} Main
+	java kr.ft.avaj.simulator.Simulator $(FILE)
+
+re :
+	@$(MAKE) clean
+	@$(MAKE) all

@@ -1,29 +1,20 @@
 package kr.ft.avaj.simulator;
 
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.File;
-import java.io.FileNotFoundException;
+
 
 public class Simulator {
-    private static ArrayList<String> readFile(String filepath) throws FileNotFoundException {
-        File file = new File(filepath);
-        Scanner scanner = new Scanner(file);
-        ArrayList<String> lines = new ArrayList<String>();
 
-        while (scanner.hasNextLine()) {
-            lines.add(scanner.nextLine());
-        }
-        scanner.close();
-        return lines;
+    private static ArrayList<String> readFile(String path) {
+        Parser parser = new Parser(path);
+        return parser.parseSenarioFile();
     }
 
     public static void main(String[] args) {
-        try {
-            ArrayList<String> lines = readFile(args[0]);
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + args[0]);
-            System.exit(1);
+        ArrayList<String> lines = readFile(args[0]);
+
+        for (String line : lines) {
+            System.out.println(line);
         }
     }
 };

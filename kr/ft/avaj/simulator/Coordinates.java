@@ -1,11 +1,11 @@
 package kr.ft.avaj.simulator;
 
-public class Coordiantes {
+public class Coordinates {
     int longitude;
     int latitude;
     int height;
     
-    Coordiantes(int longitude, int latitude, int height) {
+    Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;

@@ -52,11 +52,11 @@ public class JetPlane extends Aircraft implements Flyable {
         weatherTower.register(this);
     }
 
-    protected String buildSpeakMessage(String message) {
+    private String buildSpeakMessage(String message) {
         return this.buildAircraftBarcode() + ": " + message + " " + this.buildAircraftCoordinatesMessage();
     }
 
-    protected String buildAircraftBarcode() {
+    public String buildAircraftBarcode() {
         return this.type + "#" + this.name + "(" + this.id + ")";
     }
 

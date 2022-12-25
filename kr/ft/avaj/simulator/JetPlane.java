@@ -14,14 +14,18 @@ public class JetPlane extends Aircraft implements Flyable {
     }
 
     // public void registerTower(WeatherTower weatherTower) {
-    // }s
+    // }
 
     private String buildSpeakMessage() {
-        return this.type + "#" + this.name + "(" + this.capitalType + this.id + "): " + this.getByWeather(WeatherProvider.getCurrentWeather(this.coordinates)) 
+        return this.type + "#" + this.name + "(" + this.id + "): " + this.getByWeather(WeatherProvider.getCurrentWeather(this.coordinates)) 
             + " (" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")";
     }
 
     public void speak() {
+        System.out.println(buildSpeakMessage());
+    }
+
+    public void speak(String filepath) {
         System.out.println(buildSpeakMessage());
     }
 }

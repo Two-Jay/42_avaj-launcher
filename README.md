@@ -24,7 +24,7 @@ java kr.ft.avaj.simulator.Simulator ./example/senario.txt
 ## 1. Description
 ***
 
-This project is a simple simulation. Depending on the weather in the generated field, it simulates the aircraft present on the field and outputs a message informing them of their condition.
+This project is a simple simulation. Depending on the weather in the generated field, it simulates the aircraft present on the field and outputs a message informing them of their condition. After the program runs, the program runs a simulation based on the scenario.txt, and then a log of the results is generated in simulation.txt file own the root directory of the program.
 
 There are three types of aircraft: JetPlane, Helicopter, and Baloon, and the three types of behavior patterns are different.
 

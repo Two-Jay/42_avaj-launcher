@@ -13,22 +13,25 @@ public class Simulator {
         ArrayList<Flyable> flyables = new ArrayList<Flyable>();
 
         for (String line : parsed) {
-            String[] lineSplit = line.split(" ");
-            String type = lineSplit[0];
-            String name = lineSplit[1];
-            int longitude = Integer.parseInt(lineSplit[2]);
-            int latitude = Integer.parseInt(lineSplit[3]);
-            int height = Integer.parseInt(lineSplit[4]);
             try {
+                String[] lineSplit = line.split(" ");
+                String type = lineSplit[0];
+                String name = lineSplit[1];
+                int longitude = Integer.parseInt(lineSplit[2]);
+                int latitude = Integer.parseInt(lineSplit[3]);
+                int height = Integer.parseInt(lineSplit[4]);
                 if (isValidCoordinates(longitude, latitude, height) == false) {
                     throw new InvalidCoordinatesException(longitude, latitude, height);
                 }
+                Flyable flyable = aircraftFactory.newAircraft(type, name, longitude, latitude, height);
+                flyables.add(flyable);
             } catch (InvalidCoordinatesException e) {
                 System.out.println(e.getMessage());
                 System.exit(1);
+            } catch (NumberFormatException e) {
+                System.out.println("Exception : invalid number format for coordinates. (" + line + ")");
+                System.exit(1);
             }
-            Flyable flyable = aircraftFactory.newAircraft(type, name, longitude, latitude, height);
-            flyables.add(flyable);
         }
         return flyables;
     }
@@ -58,10 +61,10 @@ public class Simulator {
 
     private static boolean isNeededToUnregister(Flyable flyable) {
         return flyable.getCoordinates().getHeight() <= 0
-            && flyable.getCoordinates().getLatitude() <= 0
-            && flyable.getCoordinates().getLongitude() <= 0
-            && flyable.getCoordinates().getHeight() >= 300
-            && flyable.getCoordinates().getLatitude() >= 300;
+            || flyable.getCoordinates().getLatitude() <= 0
+            || flyable.getCoordinates().getLongitude() <= 0
+            || flyable.getCoordinates().getLongitude() >= 300
+            || flyable.getCoordinates().getLatitude() >= 300;
     }
 
     public static void main(String[] args) {

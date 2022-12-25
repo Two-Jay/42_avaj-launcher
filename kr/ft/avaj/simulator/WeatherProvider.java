@@ -1,17 +1,13 @@
 package kr.ft.avaj.simulator;
 
 public class WeatherProvider {
-    private static WeatherProvider weatherProvider = null;
     private static String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
     private static Field field = new Field(300, 300, weather);
 
     private WeatherProvider() {}
 
-    public static WeatherProvider getProvider() {
-        if (weatherProvider == null) {
-            weatherProvider = Holder.INSTANCE;
-        }
-        return weatherProvider;
+    public static WeatherProvider getInstance() {
+        return Holder.INSTANCE;
     }
 
     private static class Holder {

@@ -18,6 +18,10 @@ public class WeatherProvider {
         return field.getWeather(coordinates);
     }
 
+    public static void updateWeather() {
+        field.updateWeather(weather);
+    }
+
     public static void printField() {
         field.printWeather();
     }

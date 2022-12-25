@@ -5,20 +5,27 @@ import java.util.ArrayList;
 public class Field {
     int height;
     int width;
-    ArrayList<ArrayList<String>> weather = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> FieldInfo = new ArrayList<ArrayList<String>>();
 
     Field(int height, int width, String[] weather) {
         this.height = height;
         this.width = width;
     
+        this.updateWeather(weather);
+    }
+
+    public void updateWeather(String[] weather) {
         for (int i = 0; i < height; i++) {
             ArrayList<String> row = new ArrayList<String>();
             for (int j = 0; j < width; j++) {
-                int rand = (int)(Math.random() * weather.length);
-                row.add(weather[rand]);
+                row.add(weather[(int) (Math.random() * weather.length)]);
             }
-            this.weather.add(row);
+            this.FieldInfo.add(row);
         }
+    }
+
+    public void updateField(Coordinates coordinates, String weather) {
+        this.FieldInfo.get(coordinates.getLongitude()).set(coordinates.getLatitude(), weather);
     }
 
     public int getHeight() {
@@ -30,11 +37,11 @@ public class Field {
     }
 
     public String getWeather(int x, int y) {
-        return weather.get(x).get(y);
+        return FieldInfo.get(x).get(y);
     }
 
     public String getWeather(Coordinates coordinates) {
-        return weather.get(coordinates.getLongitude()).get(coordinates.getLatitude());
+        return FieldInfo.get(coordinates.getLongitude()).get(coordinates.getLatitude());
     }
 
     public void printWeather() {

@@ -46,6 +46,9 @@ public class Simulator {
 
         for (int i = 0; i < simulationCount; i++) {
             weatherTower.changeWeather();
+            for (Flyable flyable : flyables) {
+                flyable.updateConditions();
+            }
         }
     }
 };

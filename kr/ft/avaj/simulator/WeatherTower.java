@@ -6,6 +6,6 @@ class WeatherTower extends Tower {
     }
 
     void changeWeather() {
-        this.conditionsChanged();
+        WeatherProvider.getInstance().updateWeather();
     }
 }

@@ -48,6 +48,21 @@ public class Helicopter extends Aircraft implements Flyable {
         }
     }
 
+    protected String getMessageByWeather(String weather) {
+        switch (weather) {
+            case "RAIN":
+                return "It's raining. Better watch out for lightings.";
+            case "FOG":
+                return "It's foggy. Be careful not to crash.";
+            case "SUN":
+                return "This is hot.";
+            case "SNOW":
+                return "My rotor is going to freeze!";
+            default:
+                return "Unknown weather.";
+        }
+    }
+
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
     }

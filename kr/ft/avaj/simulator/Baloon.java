@@ -48,6 +48,21 @@ public class Baloon extends Aircraft implements Flyable {
         }
     }
 
+    protected String getMessageByWeather(String weather) {
+        switch (weather) {
+            case "RAIN":
+                return "Damn you rain! You messed up my baloon.";
+            case "FOG":
+                return "I can't see anything!. We are going down.";
+            case "SUN":
+                return "Let's enjoy the good weather and take some pics.";
+            case "SNOW":
+                return "It's snowing. We're gonsna crash.";
+            default:
+                return "Unknown weather";
+        }
+    }
+
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
     }

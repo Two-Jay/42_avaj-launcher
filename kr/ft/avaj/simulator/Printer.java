@@ -16,7 +16,7 @@ public class Printer {
         private static final Printer INSTANCE = new Printer();
     }
 
-    public static void setFilePath(String filepath) {
+    public void setFilePath(String filepath) {
         Printer.filepath = filepath;
         File f = new File(Printer.filepath);
         if (f.exists()) {
@@ -31,7 +31,7 @@ public class Printer {
         }
     }
 
-    public static void printToFile(String message) {
+    public void printToFile(String message) {
         FileWriter writer = null;
 
         try {

@@ -36,7 +36,9 @@ public class Simulator {
 
         int simulationCount = parseSimulationCount(lines);
         ArrayList<Flyable> flyables = generateAircrafts(lines);
-        Printer.setFilePath("simulation.txt");
+        Printer printer = Printer.getInstance();
+
+        printer.setFilePath("simulation.txt");
 
         for (int i = 0; i < simulationCount; i++) {
             for (Flyable flyable : flyables) {

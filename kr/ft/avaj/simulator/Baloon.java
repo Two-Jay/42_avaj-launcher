@@ -22,6 +22,7 @@ public class Baloon extends Aircraft implements Flyable {
     }
 
     public void speak() {
-        Printer.printToFile(buildSpeakMessage());
+        Printer p = Printer.getInstance();
+        p.printToFile(buildSpeakMessage());
     }
 }

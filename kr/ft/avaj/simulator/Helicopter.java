@@ -52,13 +52,20 @@ public class Helicopter extends Aircraft implements Flyable {
         weatherTower.register(this);
     }
 
-    private String buildSpeakMessage() {
-        return this.type + "#" + this.name + "(" + this.id + "): " + this.getByWeather(WeatherProvider.getCurrentWeather(this.coordinates)) 
-            + " (" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")";
+    protected String buildSpeakMessage(String message) {
+        return this.buildAircraftBarcode() + ": " + message + " " + this.buildAircraftCoordinatesMessage();
+    }
+
+    protected String buildAircraftBarcode() {
+        return this.type + "#" + this.name + "(" + this.id + ")";
+    }
+
+    public String buildAircraftCoordinatesMessage() {
+        return "(" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")";
     }
 
     public void speak() {
         Printer p = Printer.getInstance();
-        p.printToFile(buildSpeakMessage());
+        p.printToFile(buildSpeakMessage(this.getMessageByWeather(WeatherProvider.getCurrentWeather(this.coordinates))));
     }
 }

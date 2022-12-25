@@ -17,7 +17,7 @@ public class Aircraft {
         return ++idCounter;
     }
 
-    protected String getByWeather(String weather) {
+    protected String getMessageByWeather(String weather) {
         switch (weather) {
             case "RAIN":
                 return "It's raining. Better watch out for lightings.";
@@ -30,13 +30,5 @@ public class Aircraft {
             default:
                 return "Unknown weather.";
         }
-    }
-
-    private String buildSpeakMessage(String message) {
-        return "";
-    }
-
-    public void speak(String message) {
-        System.out.println(buildSpeakMessage(message));
     }
 }

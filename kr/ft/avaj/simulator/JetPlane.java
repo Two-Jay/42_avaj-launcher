@@ -22,10 +22,6 @@ public class JetPlane extends Aircraft implements Flyable {
     }
 
     public void speak() {
-        System.out.println(buildSpeakMessage());
-    }
-
-    public void speak(String filepath) {
-        System.out.println(buildSpeakMessage());
+        Printer.printToFile(buildSpeakMessage());
     }
 }

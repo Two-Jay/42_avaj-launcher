@@ -48,8 +48,9 @@ public class JetPlane extends Aircraft implements Flyable {
         }
     }
 
-    // public void registerTower(WeatherTower weatherTower) {
-    // }
+    public void registerTower(WeatherTower weatherTower) {
+        weatherTower.register(this);
+    }
 
     private String buildSpeakMessage() {
         return this.type + "#" + this.name + "(" + this.id + "): " + this.getByWeather(WeatherProvider.getCurrentWeather(this.coordinates)) 

@@ -15,6 +15,9 @@ public class Simulator {
         for (String line : parsed) {
             try {
                 String[] lineSplit = line.split(" ");
+                if (lineSplit.length != 5) {
+                    throw new InvalidArgumentException();
+                }
                 String type = lineSplit[0];
                 String name = lineSplit[1];
                 int longitude = Integer.parseInt(lineSplit[2]);
@@ -25,7 +28,7 @@ public class Simulator {
                 }
                 Flyable flyable = aircraftFactory.newAircraft(type, name, longitude, latitude, height);
                 flyables.add(flyable);
-            } catch (InvalidCoordinatesException e) {
+            } catch (InvalidCoordinatesException | InvalidArgumentException e) {
                 System.out.println(e.getMessage());
                 System.exit(1);
             } catch (NumberFormatException e) {
@@ -68,13 +71,16 @@ public class Simulator {
     }
 
     public static void main(String[] args) {
-        ArrayList<String> lines = readFile(args[0]);
+        Printer.getInstance().setFilePath("simulation.txt");
+        WeatherTower weatherTower = new WeatherTower();
 
+        if (args.length != 1) {
+            System.out.println("Exception : invalid number of arguments.");
+            System.exit(1);
+        }
+        ArrayList<String> lines = readFile(args[0]);
         int simulationCount = parseSimulationCount(lines);
         ArrayList<Flyable> flyables = generateAircrafts(lines);
-        Printer.getInstance().setFilePath("simulation.txt");
-
-        WeatherTower weatherTower = new WeatherTower();
 
         for (Flyable flyable : flyables) {
             flyable.registerTower(weatherTower);

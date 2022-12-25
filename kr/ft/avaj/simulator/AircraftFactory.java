@@ -7,9 +7,6 @@ public class AircraftFactory {
 
     public Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
         try {
-            if (isValidCoordinates(longitude, latitude, height) == false) {
-                throw new InvalidCoordinatesException(longitude, latitude, height);
-            }
             if (isValidAircraftType(type) == false) {
                 throw new InvalidAircraftTypeException(type);
             }
@@ -21,9 +18,6 @@ public class AircraftFactory {
             } else if (type.equals("Helicopter")) {
                 return new Helicopter(name, coordinates);
             }
-        } catch (InvalidCoordinatesException e) {
-            System.out.println(e.getMessage());
-            System.exit(1);
         } catch (InvalidAircraftTypeException e) {
             System.out.println(e.getMessage());
             System.exit(1);
@@ -33,10 +27,6 @@ public class AircraftFactory {
 
     private boolean isValidAircraftType(String type) {
         return aircraftTypes.contains(type);
-    }
-
-    private boolean isValidCoordinates(int longitude, int latitude, int height) {
-        return longitude >= 0 && latitude >= 0 && height >= 0 && height <= 100 && latitude <= 300 && longitude <= 300;
     }
 
     AircraftFactory() {

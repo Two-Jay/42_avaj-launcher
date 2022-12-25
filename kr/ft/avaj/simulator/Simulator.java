@@ -36,14 +36,16 @@ public class Simulator {
 
         int simulationCount = parseSimulationCount(lines);
         ArrayList<Flyable> flyables = generateAircrafts(lines);
-        Printer printer = Printer.getInstance();
+        Printer.getInstance().setFilePath("simulation.txt");
 
-        printer.setFilePath("simulation.txt");
+        WeatherTower weatherTower = new WeatherTower();
+
+        for (Flyable flyable : flyables) {
+            flyable.registerTower(weatherTower);
+        }
 
         for (int i = 0; i < simulationCount; i++) {
-            for (Flyable flyable : flyables) {
-                flyable.updateConditions();
-            }
+            weatherTower.changeWeather();
         }
     }
 };

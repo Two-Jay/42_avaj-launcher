@@ -42,7 +42,7 @@ public class Simulator {
 
         for (int i = 0; i < simulationCount; i++) {
             for (Flyable flyable : flyables) {
-                flyable.speak();
+                flyable.updateConditions();
             }
         }
     }

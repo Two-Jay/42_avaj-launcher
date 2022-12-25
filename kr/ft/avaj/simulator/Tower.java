@@ -12,11 +12,17 @@ public class Tower {
     }
 
     public void unregister(Flyable flyable) {
+        printer.printToFile(buildUnregisterMessage(flyable));
         this.observers.remove(flyable);
     }
 
     private String buildRegisterMessage (Flyable flyable) {
         String message = "Tower says: " + flyable.buildAircraftBarcode() + " registered to weather tower.";
+        return message;
+    }
+
+    private String buildUnregisterMessage (Flyable flyable) {
+        String message = "Tower says: " + flyable.buildAircraftBarcode() + " unregistered from weather tower.";
         return message;
     }
 

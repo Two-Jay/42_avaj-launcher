@@ -50,5 +50,9 @@ public class Simulator {
                 flyable.updateConditions();
             }
         }
+
+        for (Flyable flyable : flyables) {
+            weatherTower.unregister(flyable);
+        }
     }
 };

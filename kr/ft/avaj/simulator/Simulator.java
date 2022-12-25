@@ -48,6 +48,9 @@ public class Simulator {
             weatherTower.changeWeather();
             for (Flyable flyable : flyables) {
                 flyable.updateConditions();
+                if (flyable.getCoordinates().getHeight() <= 0) {
+                    weatherTower.unregister(flyable);
+                }
             }
         }
 

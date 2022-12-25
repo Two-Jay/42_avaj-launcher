@@ -5,5 +5,6 @@ public interface Flyable {
     public abstract void registerTower(WeatherTower weatherTower);
 
     public abstract String buildAircraftBarcode();
+    public abstract Coordinates getCoordinates();
     public abstract void speak();
 }

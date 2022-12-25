@@ -67,6 +67,10 @@ public class Helicopter extends Aircraft implements Flyable {
         weatherTower.register(this);
     }
 
+    public Coordinates getCoordinates() {
+        return this.coordinates;
+    }
+
     private String buildSpeakMessage(String message) {
         return this.buildAircraftBarcode() + ": " + message + " " + this.buildAircraftCoordinatesMessage();
     }

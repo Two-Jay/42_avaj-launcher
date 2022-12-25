@@ -18,22 +18,19 @@ public class Field {
         for (int i = 0; i < height; i++) {
             ArrayList<String> row = new ArrayList<String>();
             for (int j = 0; j < width; j++) {
-                row.add(weather[(int) (Math.random() * weather.length)]);
+                row.add(generateRandomWeather(weather));
             }
             this.FieldInfo.add(row);
         }
     }
+    
+    private String generateRandomWeather(String[] weather) {
+        int rand = (int) ((Math.random() * 10000) % weather.length);
+        return weather[rand];
+    }
 
     public void updateField(Coordinates coordinates, String weather) {
         this.FieldInfo.get(coordinates.getLongitude()).set(coordinates.getLatitude(), weather);
-    }
-
-    public int getHeight() {
-        return this.height;
-    }
-
-    public int getWidth() {
-        return this.width;
     }
 
     public String getWeather(int x, int y) {

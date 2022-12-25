@@ -56,6 +56,14 @@ public class Simulator {
         return longitude >= 0 && latitude >= 0 && height >= 0 && height <= 100 && latitude <= 300 && longitude <= 300;
     }
 
+    private static boolean isNeededToUnregister(Flyable flyable) {
+        return flyable.getCoordinates().getHeight() <= 0
+            && flyable.getCoordinates().getLatitude() <= 0
+            && flyable.getCoordinates().getLongitude() <= 0
+            && flyable.getCoordinates().getHeight() >= 300
+            && flyable.getCoordinates().getLatitude() >= 300;
+    }
+
     public static void main(String[] args) {
         ArrayList<String> lines = readFile(args[0]);
 
@@ -73,7 +81,7 @@ public class Simulator {
             weatherTower.changeWeather();
             for (Flyable flyable : flyables) {
                 flyable.updateConditions();
-                if (flyable.getCoordinates().getHeight() <= 0) {
+                if (isNeededToUnregister(flyable)) {
                     weatherTower.unregister(flyable);
                 }
             }

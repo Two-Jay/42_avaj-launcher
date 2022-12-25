@@ -59,13 +59,13 @@ public class Simulator {
     }
 
     private static boolean isValidCoordinates(int longitude, int latitude, int height) {
-        return longitude >= 0 && latitude >= 0 && height >= 0 && height <= 100 && latitude <= 300 && longitude <= 300;
+        return longitude >= 0 && latitude >= 0 && height >= 0 && height <= 100 && latitude < 300 && longitude < 300;
     }
 
     private static boolean isNeededToUnregister(Flyable flyable) {
         return flyable.getCoordinates().getHeight() <= 0
-            || flyable.getCoordinates().getLatitude() <= 0
-            || flyable.getCoordinates().getLongitude() <= 0
+            || flyable.getCoordinates().getLatitude() < 0
+            || flyable.getCoordinates().getLongitude() < 0
             || flyable.getCoordinates().getLongitude() >= 300
             || flyable.getCoordinates().getLatitude() >= 300;
     }

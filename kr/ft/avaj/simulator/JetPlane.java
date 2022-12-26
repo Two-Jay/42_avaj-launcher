@@ -18,32 +18,24 @@ public class JetPlane extends Aircraft implements Flyable {
 
         switch (weather) {
             case "SUN":
-                this.coordinates = new Coordinates(
-                    this.coordinates.getLongitude(),
-                    this.coordinates.getLatitude() + 10,
-                    this.coordinates.getHeight() + 2
-                );
+                this.coordinates.setLongitude(this.coordinates.getLongitude());
+                this.coordinates.setLatitude(this.coordinates.getLatitude() + 10);
+                this.coordinates.setHeight(this.coordinates.getHeight() + 2);
                 break;
             case "RAIN":
-                this.coordinates = new Coordinates(
-                    this.coordinates.getLongitude(),
-                    this.coordinates.getLatitude() + 5,
-                    this.coordinates.getHeight()
-                );
+                this.coordinates.setLongitude(this.coordinates.getLongitude());
+                this.coordinates.setLatitude(this.coordinates.getLatitude() + 5);
+                this.coordinates.setHeight(this.coordinates.getHeight());
                 break;
             case "FOG":
-                this.coordinates = new Coordinates(
-                    this.coordinates.getLongitude(),
-                    this.coordinates.getLatitude() + 1,
-                    this.coordinates.getHeight()
-                );
+                this.coordinates.setLongitude(this.coordinates.getLongitude());
+                this.coordinates.setLatitude(this.coordinates.getLatitude() + 1);
+                this.coordinates.setHeight(this.coordinates.getHeight());
                 break;
             case "SNOW":
-                this.coordinates = new Coordinates(
-                    this.coordinates.getLongitude(),
-                    this.coordinates.getLatitude(),
-                    this.coordinates.getHeight() - 7
-                );
+                this.coordinates.setLongitude(this.coordinates.getLongitude());
+                this.coordinates.setLatitude(this.coordinates.getLatitude());
+                this.coordinates.setHeight(this.coordinates.getHeight() - 7);
                 break;
         }
     }

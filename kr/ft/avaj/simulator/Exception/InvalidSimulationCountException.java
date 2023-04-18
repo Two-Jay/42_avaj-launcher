@@ -1,6 +1,6 @@
 package kr.ft.avaj.simulator.Exception;
 
-class InvalidSimulationCountException extends RuntimeException {
+public class InvalidSimulationCountException extends RuntimeException {
     public InvalidSimulationCountException(String parsed) {
         super(buildLengthExceptionMessage(parsed));
     }

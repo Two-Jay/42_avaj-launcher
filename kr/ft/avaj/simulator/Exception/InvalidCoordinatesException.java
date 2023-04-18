@@ -1,6 +1,6 @@
 package kr.ft.avaj.simulator.Exception;
 
-class InvalidCoordinatesException extends RuntimeException {
+public class InvalidCoordinatesException extends RuntimeException {
     public InvalidCoordinatesException(int longitude, int latitude, int height) {
         super(buildExceptionMessage(longitude, latitude, height));
     }

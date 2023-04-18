@@ -1,5 +1,5 @@
-package kr.ft.avaj.simulator.Aircraft.MessageStrategy;
+package kr.ft.avaj.simulator.Aircraft.MessageBuilder;
 
-public interface MessageStrategyInterface {
+public interface MessageBuilderInterface {
     public abstract String buildMessage(String weather);
 }

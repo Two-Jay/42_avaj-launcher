@@ -1,60 +1,31 @@
-package kr.ft.avaj.simulator;
+package kr.ft.avaj.simulator.Aircraft;
+
+import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
+import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
+import kr.ft.avaj.simulator.Aircraft.MessageBuilder.JetPlaneMessageBuilder;
+import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategy;
+import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.JetPlaneMoveUpdateStrategy;
+
+import kr.ft.avaj.simulator.Utils.Printer;
+import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
+import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 
 public class JetPlane extends Aircraft implements Flyable {
     String type;
-    String capitalType;
+    AircraftMessageBuilder messageBuilder;
+    AircraftMoveUpdateStrategy moveUpdateStrategy;
 
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
         this.type = "JetPlane";
-        this.capitalType = "J";
+        this.messageBuilder = new JetPlaneMessageBuilder(this);
+        this.moveUpdateStrategy = new JetPlaneMoveUpdateStrategy();
     }
 
     public void updateConditions() {
         this.speak();
-
-        WeatherProvider weatherProvider = WeatherProvider.getInstance();
-        String weather = weatherProvider.getCurrentWeather(this.coordinates);
-
-        switch (weather) {
-            case "SUN":
-                this.coordinates.setLongitude(this.coordinates.getLongitude());
-                this.coordinates.setLatitude(this.coordinates.getLatitude() + 10);
-                this.coordinates.setHeight(this.coordinates.getHeight() + 2);
-                break;
-            case "RAIN":
-                this.coordinates.setLongitude(this.coordinates.getLongitude());
-                this.coordinates.setLatitude(this.coordinates.getLatitude() + 5);
-                this.coordinates.setHeight(this.coordinates.getHeight());
-                break;
-            case "FOG":
-                this.coordinates.setLongitude(this.coordinates.getLongitude());
-                this.coordinates.setLatitude(this.coordinates.getLatitude() + 1);
-                this.coordinates.setHeight(this.coordinates.getHeight());
-                break;
-            case "SNOW":
-                this.coordinates.setLongitude(this.coordinates.getLongitude());
-                this.coordinates.setLatitude(this.coordinates.getLatitude());
-                this.coordinates.setHeight(this.coordinates.getHeight() - 7);
-                break;
-        }
+        this.moveUpdateStrategy.update(this.coordinates);
     }
-
-    protected String getMessageByWeather(String weather) {
-        switch (weather) {
-            case "RAIN":
-                return "It's raining. Better watch out for lightings.";
-            case "FOG":
-                return "It's foggy. Be careful not to crash.";
-            case "SUN":
-                return "It's sunny. Let's enjoy the good weather and take some pics.";
-            case "SNOW":
-                return "OMG! Winter is coming!";
-            default:
-                return "Unknown weather.";
-        }
-    }
-
 
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
@@ -64,20 +35,11 @@ public class JetPlane extends Aircraft implements Flyable {
         return this.coordinates;
     }
 
-    private String buildSpeakMessage(String message) {
-        return this.buildAircraftBarcode() + ": " + message + " " + this.buildAircraftCoordinatesMessage();
-    }
-
-    public String buildAircraftBarcode() {
-        return this.type + "#" + this.name + "(" + this.id + ")";
-    }
-
-    public String buildAircraftCoordinatesMessage() {
-        return "(" + this.coordinates.getLongitude() + ", " + this.coordinates.getLatitude() + ", " + this.coordinates.getHeight() + ")";
-    }
-
     public void speak() {
         Printer p = Printer.getInstance();
-        p.printToFile(buildSpeakMessage(this.getMessageByWeather(WeatherProvider.getCurrentWeather(this.coordinates))));
+        String weather = WeatherProvider.getInstance().getCurrentWeather(this.coordinates);
+        String reportMessage = this.messageBuilder.buildMessage(weather);
+
+        p.printToFile(reportMessage);
     }
 }

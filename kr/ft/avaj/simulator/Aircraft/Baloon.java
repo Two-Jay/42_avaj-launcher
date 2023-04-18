@@ -11,13 +11,12 @@ import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 
 public class Baloon extends Aircraft implements Flyable {
-    String type;
-    String capitalType;
     AircraftMessageBuilder messageBuilder;
     AircraftMoveUpdateStrategy moveUpdateStrategy;
 
     public Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
+        this.type = "Baloon";
         messageBuilder = new BaloonMessageBuilder(this);
         moveUpdateStrategy = new BaloonMoveUpdateStrategy();
     }

@@ -1,6 +1,6 @@
 package kr.ft.avaj.simulator.Exception;
 
-class InvalidAircraftTypeException extends RuntimeException {
+public class InvalidAircraftTypeException extends RuntimeException {
     public InvalidAircraftTypeException(String aircraftName) {
         super(buildExceptionMessage(aircraftName));
     }

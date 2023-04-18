@@ -2,6 +2,10 @@ package kr.ft.avaj.simulator.Aircraft.Factory;
 
 import java.util.ArrayList;
 
+import kr.ft.avaj.simulator.Aircraft.*;
+import kr.ft.avaj.simulator.Exception.InvalidAircraftTypeException;
+import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
+
 public class AircraftFactory {
     private ArrayList<String> aircraftTypes = new ArrayList<String>();
 

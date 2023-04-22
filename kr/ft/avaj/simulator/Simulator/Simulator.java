@@ -1,7 +1,6 @@
 package kr.ft.avaj.simulator.Simulator;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import kr.ft.avaj.simulator.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;

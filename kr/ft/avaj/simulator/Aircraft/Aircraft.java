@@ -1,7 +1,6 @@
 package kr.ft.avaj.simulator.Aircraft;
 
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
-import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 
 public abstract class Aircraft {
     protected long id;

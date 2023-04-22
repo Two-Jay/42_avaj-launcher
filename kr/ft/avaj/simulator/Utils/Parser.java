@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 
 import kr.ft.avaj.simulator.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Aircraft.Factory.AircraftFactory;
-import kr.ft.avaj.simulator.Utils.SimulationMetaData;
 import kr.ft.avaj.simulator.Exception.InvalidSimulationCountException;
 
 public class Parser {

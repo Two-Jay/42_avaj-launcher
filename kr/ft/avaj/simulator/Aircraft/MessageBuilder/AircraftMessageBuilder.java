@@ -14,4 +14,8 @@ public abstract class AircraftMessageBuilder implements MessageBuilderInterface 
     protected abstract String buildReportMessageByWeather(String weather);
 
     public abstract String buildMessage(String weather);
+
+    public String buildAircraftBarcode() {
+        return barcodeBuilder.getCode();
+    }
 }

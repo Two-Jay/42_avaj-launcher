@@ -2,7 +2,7 @@ package kr.ft.avaj.simulator.Aircraft;
 
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
-import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategy;
+import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.HelicopterMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.HelicopterMoveUpdateStrategy;
 
@@ -12,7 +12,7 @@ import kr.ft.avaj.simulator.Utils.Printer;
 
 public class Helicopter extends Aircraft implements Flyable {
     AircraftMessageBuilder messageBuilder;
-    AircraftMoveUpdateStrategy moveUpdateStrategy;
+    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
     public Helicopter(String name, Coordinates coordinates) {
         super(name, coordinates);
@@ -32,6 +32,10 @@ public class Helicopter extends Aircraft implements Flyable {
 
     public Coordinates getCoordinates() {
         return this.coordinates;
+    }
+
+    public String getAircraftBarcode() {
+        return this.messageBuilder.buildAircraftBarcode();
     }
 
     public void speak() {

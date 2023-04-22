@@ -3,7 +3,7 @@ package kr.ft.avaj.simulator.Aircraft;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.JetPlaneMessageBuilder;
-import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategy;
+import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.JetPlaneMoveUpdateStrategy;
 
 import kr.ft.avaj.simulator.Utils.Printer;
@@ -13,7 +13,7 @@ import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 public class JetPlane extends Aircraft implements Flyable {
     String type;
     AircraftMessageBuilder messageBuilder;
-    AircraftMoveUpdateStrategy moveUpdateStrategy;
+    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
@@ -33,6 +33,10 @@ public class JetPlane extends Aircraft implements Flyable {
 
     public Coordinates getCoordinates() {
         return this.coordinates;
+    }
+
+    public String getAircraftBarcode() {
+        return this.messageBuilder.buildAircraftBarcode();
     }
 
     public void speak() {

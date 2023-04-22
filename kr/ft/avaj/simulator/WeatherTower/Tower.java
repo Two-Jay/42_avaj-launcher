@@ -19,12 +19,12 @@ public class Tower {
     }
 
     private String buildRegisterMessage(Flyable flyable) {
-        String message = "Tower says: " + flyable.buildAircraftBarcode() + " registered to weather tower.";
+        String message = "Tower says: " + flyable.getAircraftBarcode() + " registered to weather tower.";
         return message;
     }
 
     private String buildUnregisterMessage(Flyable flyable) {
-        String message = "Tower says: " + flyable.buildAircraftBarcode() + " unregistered from weather tower.";
+        String message = "Tower says: " + flyable.getAircraftBarcode() + " unregistered from weather tower.";
         return message;
     }
 

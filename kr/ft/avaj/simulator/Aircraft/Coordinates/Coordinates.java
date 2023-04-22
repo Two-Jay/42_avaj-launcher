@@ -4,6 +4,7 @@ public class Coordinates {
     int longitude;
     int latitude;
     int height;
+    int limit = 100;
 
     public Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
@@ -21,8 +22,8 @@ public class Coordinates {
 
     public void setHeight(int height) {
         this.height = height;
-        if (this.height > 100) {
-            this.height = 100;
+        if (this.height > this.limit) {
+            this.height = this.limit;
         } else if (this.height < 0) {
             this.height = 0;
         }

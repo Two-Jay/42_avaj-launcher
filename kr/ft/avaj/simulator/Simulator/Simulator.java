@@ -1,6 +1,7 @@
 package kr.ft.avaj.simulator.Simulator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import kr.ft.avaj.simulator.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
@@ -49,10 +50,13 @@ public class Simulator {
 
         for (int i = 0; i < simulationCount; i++) {
             weatherTower.changeWeather();
-            for (Flyable aircraft : weatherTower.getFlyables()) {
+            ArrayList<Flyable> flyables = weatherTower.getFlyables();
+            for (Iterator<Flyable> it = flyables.iterator(); it.hasNext();) {
+                Flyable aircraft = it.next();
                 aircraft.updateConditions();
                 if (isNeededToDetach(aircraft)) {
-                    weatherTower.unregister(aircraft);
+                    aircraft.land(weatherTower);
+                    it.remove();
                 }
             }
         }

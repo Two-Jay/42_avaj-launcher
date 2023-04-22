@@ -51,12 +51,11 @@ public class Simulator {
         for (int i = 0; i < simulationCount; i++) {
             weatherTower.changeWeather();
             ArrayList<Flyable> flyables = weatherTower.getFlyables();
-            for (Iterator<Flyable> it = flyables.iterator(); it.hasNext();) {
-                Flyable aircraft = it.next();
+            for (int j = 0; j < flyables.size(); j++) {
+                Flyable aircraft = flyables.get(j);
                 aircraft.updateConditions();
                 if (isNeededToDetach(aircraft)) {
                     aircraft.land(weatherTower);
-                    it.remove();
                 }
             }
         }

@@ -30,6 +30,10 @@ public class Baloon extends Aircraft implements Flyable {
         weatherTower.register(this);
     }
 
+    public void land(WeatherTower weatherTower) {
+        weatherTower.unregister(this);
+    }
+
     public Coordinates getCoordinates() {
         return this.coordinates;
     }

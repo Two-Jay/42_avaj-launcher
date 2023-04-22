@@ -33,9 +33,13 @@ public class AircraftFactory {
         return aircraftTypes.contains(type);
     }
 
-    AircraftFactory() {
+    private void setAircraftTypes() {
         aircraftTypes.add("Baloon");
         aircraftTypes.add("JetPlane");
         aircraftTypes.add("Helicopter");
+    }
+
+    public AircraftFactory() {
+        this.setAircraftTypes();
     }
 }

@@ -13,7 +13,7 @@ clean :
 	find * -name "*.class" -delete
 
 run :
-	java kr.ft.avaj.simulator.Simulator $(FILE)
+	java kr.ft.avaj.simulator.main $(FILE)
 
 re :
 	@$(MAKE) clean

@@ -11,7 +11,6 @@ import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 
 public class JetPlane extends Aircraft implements Flyable {
-    String type;
     AircraftMessageBuilder messageBuilder;
     AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
@@ -29,6 +28,10 @@ public class JetPlane extends Aircraft implements Flyable {
 
     public void registerTower(WeatherTower weatherTower) {
         weatherTower.register(this);
+    }
+
+    public void land(WeatherTower weatherTower) {
+        weatherTower.unregister(this);
     }
 
     public Coordinates getCoordinates() {

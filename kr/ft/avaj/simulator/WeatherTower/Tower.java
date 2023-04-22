@@ -33,4 +33,8 @@ public class Tower {
             flyable.updateConditions();
         }
     }
+
+    public ArrayList<Flyable> getFlyables() {
+        return this.observers;
+    }
 }

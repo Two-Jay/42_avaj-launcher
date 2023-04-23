@@ -1,9 +1,7 @@
 package kr.ft.avaj.simulator.Aircraft;
 
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
-import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.JetPlaneMessageBuilder;
-import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.JetPlaneMoveUpdateStrategy;
 
 import kr.ft.avaj.simulator.Utils.Printer;
@@ -11,9 +9,6 @@ import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 
 public class JetPlane extends Aircraft implements Flyable {
-    AircraftMessageBuilder messageBuilder;
-    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
-
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
         this.type = "JetPlane";

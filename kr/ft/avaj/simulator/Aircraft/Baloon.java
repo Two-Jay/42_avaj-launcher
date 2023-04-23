@@ -1,9 +1,7 @@
 package kr.ft.avaj.simulator.Aircraft;
 
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
-import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.BaloonMessageBuilder;
-import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.BaloonMoveUpdateStrategy;
 
 import kr.ft.avaj.simulator.Utils.Printer;
@@ -11,9 +9,6 @@ import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 
 public class Baloon extends Aircraft implements Flyable {
-    AircraftMessageBuilder messageBuilder;
-    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
-
     public Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
         this.type = "Baloon";

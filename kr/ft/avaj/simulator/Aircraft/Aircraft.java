@@ -1,5 +1,7 @@
 package kr.ft.avaj.simulator.Aircraft;
 
+import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
+import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 
 public abstract class Aircraft {
@@ -8,6 +10,8 @@ public abstract class Aircraft {
     protected String type;
     protected Coordinates coordinates;
     private static long idCounter = 0;
+    AircraftMessageBuilder messageBuilder;
+    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.name = name;

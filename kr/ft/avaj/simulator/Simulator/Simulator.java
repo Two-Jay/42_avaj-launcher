@@ -9,7 +9,7 @@ import kr.ft.avaj.simulator.Utils.*;
 import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 
 public class Simulator {
-    private SimulationMetaData metaData = new SimulationMetaData();
+    private static SimulationMetaData metaData = new SimulationMetaData();
     private ParserInterface parser;
     private ParsedData parsedData;
 

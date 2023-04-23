@@ -39,7 +39,7 @@ public class JetPlane extends Aircraft implements Flyable {
 
     public void speak() {
         Printer p = Printer.getInstance();
-        String weather = WeatherProvider.getInstance().getCurrentWeather(this.coordinates);
+        String weather = WeatherProvider.getProvider().getCurrentWeather(this.coordinates);
         String reportMessage = this.messageBuilder.buildMessage(weather);
 
         p.printToFile(reportMessage);

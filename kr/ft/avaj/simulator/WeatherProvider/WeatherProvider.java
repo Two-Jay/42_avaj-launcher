@@ -12,7 +12,7 @@ public class WeatherProvider {
         field = new Field(metaData.latitudeMaximum, metaData.longitudeMaximum, weather);
     }
 
-    public static WeatherProvider getInstance() {
+    public static WeatherProvider getProvider() {
         return Holder.INSTANCE;
     }
 

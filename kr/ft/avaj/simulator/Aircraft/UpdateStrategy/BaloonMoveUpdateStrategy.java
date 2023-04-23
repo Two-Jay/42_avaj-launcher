@@ -6,7 +6,7 @@ import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 public class BaloonMoveUpdateStrategy extends AircraftMoveUpdateStrategy
         implements AircraftMoveUpdateStrategyInterface {
     public void update(Coordinates coordinates) {
-        WeatherProvider weatherProvider = WeatherProvider.getInstance();
+        WeatherProvider weatherProvider = WeatherProvider.getProvider();
         String weather = weatherProvider.getCurrentWeather(coordinates);
 
         switch (weather) {

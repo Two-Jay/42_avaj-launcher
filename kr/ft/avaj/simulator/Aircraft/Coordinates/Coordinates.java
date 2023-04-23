@@ -3,10 +3,10 @@ package kr.ft.avaj.simulator.Aircraft.Coordinates;
 import kr.ft.avaj.simulator.Utils.SimulationMetaData;
 
 public class Coordinates {
-    int longitude;
-    int latitude;
-    int height;
-    int heightLimit;
+    private int longitude;
+    private int latitude;
+    private int height;
+    private int heightLimit;
 
     public Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;

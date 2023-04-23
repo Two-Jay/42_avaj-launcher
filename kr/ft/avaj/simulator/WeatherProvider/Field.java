@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 
 public class Field {
-    int height;
-    int width;
+    long height;
+    long width;
     ArrayList<ArrayList<String>> FieldInfo = new ArrayList<ArrayList<String>>();
 
-    Field(int height, int width, String[] weather) {
+    Field(long height, long width, String[] weather) {
         this.height = height;
         this.width = width;
 

@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import kr.ft.avaj.simulator.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Aircraft.Factory.AircraftFactory;
-import kr.ft.avaj.simulator.Utils.Parser;
-import kr.ft.avaj.simulator.Utils.Printer;
-import kr.ft.avaj.simulator.Utils.SimulationMetaData;
+import kr.ft.avaj.simulator.Parser.*;
+import kr.ft.avaj.simulator.Utils.*;
 import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
-import kr.ft.avaj.simulator.Utils.ParsedData;
 
 public class Simulator {
     SimulationMetaData simulationMetaData = new SimulationMetaData();
-    Parser parser;
+    ParserInterface parser;
     AircraftFactory aircraftFactory;
     int simulationCount;
     ArrayList<Flyable> aircrafts;
@@ -29,7 +27,7 @@ public class Simulator {
         System.out.println("Aircrafts: " + aircrafts.size());
     }
 
-    public Boolean isNeededToDetach(Flyable aircraft) {
+    private Boolean isNeededToDetach(Flyable aircraft) {
         Coordinates current = aircraft.getCoordinates();
 
         return current.getHeight() <= simulationMetaData.heightMinimum

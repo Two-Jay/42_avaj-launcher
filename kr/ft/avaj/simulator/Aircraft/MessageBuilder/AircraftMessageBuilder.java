@@ -3,8 +3,8 @@ package kr.ft.avaj.simulator.Aircraft.MessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.Aircraft;
 
 public abstract class AircraftMessageBuilder implements MessageBuilderInterface {
-    AircraftBarcodeBuilder barcodeBuilder;
-    CoordinatesMessageBuilder coordinatesMessageBuilder;
+    protected AircraftBarcodeBuilder barcodeBuilder;
+    protected CoordinatesMessageBuilder coordinatesMessageBuilder;
 
     public AircraftMessageBuilder(Aircraft aircraft) {
         barcodeBuilder = new AircraftBarcodeBuilder(aircraft.getType(), aircraft.getName(), aircraft.getId());

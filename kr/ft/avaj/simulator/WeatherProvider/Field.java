@@ -11,7 +11,6 @@ public class Field {
     Field(long height, long width, String[] weather) {
         this.height = height;
         this.width = width;
-
         this.updateWeather(weather);
     }
 

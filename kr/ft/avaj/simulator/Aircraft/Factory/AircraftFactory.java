@@ -7,10 +7,10 @@ import kr.ft.avaj.simulator.Exception.InvalidAircraftTypeException;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 
 public class AircraftFactory {
-    private ArrayList<String> aircraftTypes = new ArrayList<String>();
+    private ArrayList<String> permittedAircraftTypes = new ArrayList<String>();
 
     public AircraftFactory() {
-        this.setAircraftTypes();
+        this.initPermittedAircraftTypes();
     }
 
     public Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
@@ -34,12 +34,12 @@ public class AircraftFactory {
     }
 
     private boolean isValidAircraftType(String type) {
-        return aircraftTypes.contains(type);
+        return permittedAircraftTypes.contains(type);
     }
 
-    private void setAircraftTypes() {
-        aircraftTypes.add("Baloon");
-        aircraftTypes.add("JetPlane");
-        aircraftTypes.add("Helicopter");
+    private void initPermittedAircraftTypes() {
+        permittedAircraftTypes.add("Baloon");
+        permittedAircraftTypes.add("JetPlane");
+        permittedAircraftTypes.add("Helicopter");
     }
 }

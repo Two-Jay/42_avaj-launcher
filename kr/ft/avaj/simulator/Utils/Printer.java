@@ -17,7 +17,7 @@ public class Printer {
         private static final Printer INSTANCE = new Printer();
     }
 
-    public void setFilePath(String filepath) {
+    public void setFilepath(String filepath) {
         Printer.filepath = filepath;
         File f = new File(Printer.filepath);
         if (f.exists()) {

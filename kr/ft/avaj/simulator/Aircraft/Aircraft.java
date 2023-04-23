@@ -10,8 +10,8 @@ public abstract class Aircraft {
     protected String type;
     protected Coordinates coordinates;
     private static long idCounter = 0;
-    AircraftMessageBuilder messageBuilder;
-    AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
+    protected AircraftMessageBuilder messageBuilder;
+    protected AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.name = name;

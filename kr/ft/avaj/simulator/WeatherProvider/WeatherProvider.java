@@ -27,8 +27,4 @@ public class WeatherProvider {
     public void updateWeather() {
         field.updateWeather(weather);
     }
-
-    public static void printField() {
-        field.printWeather();
-    }
 }

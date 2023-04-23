@@ -33,7 +33,7 @@ public class AircraftFactory {
         return null;
     }
 
-    private boolean isValidAircraftType(String type) {
+    private Boolean isValidAircraftType(String type) {
         return permittedAircraftTypes.contains(type);
     }
 

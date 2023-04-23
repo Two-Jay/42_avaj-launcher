@@ -16,6 +16,7 @@ public class Field {
     }
 
     public void updateWeather(String[] weather) {
+        this.FieldInfo.clear();
         for (int i = 0; i < height; i++) {
             ArrayList<String> row = new ArrayList<String>();
             for (int j = 0; j < width; j++) {
@@ -30,24 +31,11 @@ public class Field {
         return weather[rand];
     }
 
-    public void updateField(Coordinates coordinates, String weather) {
-        this.FieldInfo.get(coordinates.getLongitude()).set(coordinates.getLatitude(), weather);
-    }
-
     public String getWeather(int x, int y) {
         return FieldInfo.get(x).get(y);
     }
 
     public String getWeather(Coordinates coordinates) {
         return FieldInfo.get(coordinates.getLongitude()).get(coordinates.getLatitude());
-    }
-
-    public void printWeather() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(this.getWeather(j, i) + " ");
-            }
-            System.out.println();
-        }
     }
 }

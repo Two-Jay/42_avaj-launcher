@@ -1,15 +1,23 @@
 package kr.ft.avaj.simulator.Aircraft.Coordinates;
 
+import kr.ft.avaj.simulator.Utils.SimulationMetaData;
+
 public class Coordinates {
     int longitude;
     int latitude;
     int height;
-    int limit = 100;
+    int heightLimit;
 
     public Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
         this.latitude = latitude;
-        this.height = height;
+        SimulationMetaData metaData = new SimulationMetaData();
+        this.heightLimit = metaData.heightMaximum;
+        if (height > this.heightLimit) {
+            this.height = this.heightLimit;
+        } else {
+            this.height = height;
+        }
     }
 
     public void setLongitude(int longitude) {
@@ -22,8 +30,8 @@ public class Coordinates {
 
     public void setHeight(int height) {
         this.height = height;
-        if (this.height > this.limit) {
-            this.height = this.limit;
+        if (this.height > this.heightLimit) {
+            this.height = this.heightLimit;
         } else if (this.height < 0) {
             this.height = 0;
         }

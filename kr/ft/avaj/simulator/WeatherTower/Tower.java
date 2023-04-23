@@ -6,7 +6,7 @@ import kr.ft.avaj.simulator.Utils.Printer;
 
 public class Tower {
     private ArrayList<Flyable> observers = new ArrayList<Flyable>();
-    Printer printer = Printer.getInstance();
+    private Printer printer = Printer.getInstance();
 
     public void register(Flyable flyable) {
         printer.printToFile(buildRegisterMessage(flyable));
@@ -34,7 +34,7 @@ public class Tower {
         }
     }
 
-    public ArrayList<Flyable> getFlyables() {
+    public ArrayList<Flyable> getObservers() {
         return this.observers;
     }
 }

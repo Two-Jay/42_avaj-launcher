@@ -17,7 +17,7 @@ public class CoordinatesMessageBuilder {
         code = this.BuildCoordinatesForm(coordinates);
     }
 
-    public String BuildCoordinatesForm(Coordinates coordinates) {
+    private String BuildCoordinatesForm(Coordinates coordinates) {
         return String.format(
                 "(%d, %d, %d)",
                 coordinates.getLongitude(),

@@ -34,9 +34,6 @@ public class Simulator {
         int simulationCount = parsedData.getSimulationCount();
         ArrayList<Flyable> aircrafts = parsedData.getAircrafts();
 
-        System.out.println("Simulation count: " + parsedData.getSimulationCount());
-        System.out.println("Aircrafts: " + aircrafts.size());
-
         for (Flyable aircraft : aircrafts) {
             aircraft.registerTower(weatherTower);
         }

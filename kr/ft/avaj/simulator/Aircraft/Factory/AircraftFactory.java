@@ -9,6 +9,10 @@ import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 public class AircraftFactory {
     private ArrayList<String> aircraftTypes = new ArrayList<String>();
 
+    public AircraftFactory() {
+        this.setAircraftTypes();
+    }
+
     public Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
         try {
             if (isValidAircraftType(type) == false) {
@@ -37,9 +41,5 @@ public class AircraftFactory {
         aircraftTypes.add("Baloon");
         aircraftTypes.add("JetPlane");
         aircraftTypes.add("Helicopter");
-    }
-
-    public AircraftFactory() {
-        this.setAircraftTypes();
     }
 }

@@ -17,7 +17,7 @@ public class Helicopter extends Aircraft implements Flyable {
 
     public void updateConditions() {
         this.speak(this.followTower);
-        this.moveUpdateStrategy.update(this.coordinates);
+        this.moveUpdateStrategy.update(this.coordinates, this.followTower);
     }
 
     public void registerTower(WeatherTower weatherTower) {

@@ -1,13 +1,12 @@
 package kr.ft.avaj.simulator.Aircraft.UpdateStrategy;
 
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
-import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
+import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 
 public class JetPlaneMoveUpdateStrategy extends AircraftMoveUpdateStrategy
         implements AircraftMoveUpdateStrategyInterface {
-    public void update(Coordinates coordinates) {
-        WeatherProvider weatherProvider = WeatherProvider.getProvider();
-        String weather = weatherProvider.getCurrentWeather(coordinates);
+    public void update(Coordinates coordinates, WeatherTower followTower) {
+        String weather = followTower.getWeather(coordinates);
 
         switch (weather) {
             case "SUN":

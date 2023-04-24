@@ -2,6 +2,7 @@ package kr.ft.avaj.simulator.Aircraft;
 
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.AircraftMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.AircraftMoveUpdateStrategyInterface;
+import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 
 public abstract class Aircraft {
@@ -10,6 +11,7 @@ public abstract class Aircraft {
     protected String type;
     protected Coordinates coordinates;
     private static long idCounter = 0;
+    protected WeatherTower followTower;
     protected AircraftMessageBuilder messageBuilder;
     protected AircraftMoveUpdateStrategyInterface moveUpdateStrategy;
 
@@ -43,5 +45,5 @@ public abstract class Aircraft {
         this.coordinates = coordinates;
     }
 
-    public abstract void speak();
+    public abstract void speak(WeatherTower weatherTower);
 }

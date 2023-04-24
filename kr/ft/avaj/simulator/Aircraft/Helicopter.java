@@ -4,7 +4,6 @@ import kr.ft.avaj.simulator.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Aircraft.MessageBuilder.HelicopterMessageBuilder;
 import kr.ft.avaj.simulator.Aircraft.UpdateStrategy.HelicopterMoveUpdateStrategy;
 
-import kr.ft.avaj.simulator.WeatherProvider.WeatherProvider;
 import kr.ft.avaj.simulator.WeatherTower.WeatherTower;
 import kr.ft.avaj.simulator.Utils.Printer;
 
@@ -17,15 +16,17 @@ public class Helicopter extends Aircraft implements Flyable {
     }
 
     public void updateConditions() {
-        this.speak();
+        this.speak(this.followTower);
         this.moveUpdateStrategy.update(this.coordinates);
     }
 
     public void registerTower(WeatherTower weatherTower) {
+        this.followTower = weatherTower;
         weatherTower.register(this);
     }
 
     public void land(WeatherTower weatherTower) {
+        this.followTower = null;
         weatherTower.unregister(this);
     }
 
@@ -37,9 +38,9 @@ public class Helicopter extends Aircraft implements Flyable {
         return this.messageBuilder.buildAircraftBarcode();
     }
 
-    public void speak() {
+    public void speak(WeatherTower weatherTower) {
         Printer p = Printer.getInstance();
-        String weather = WeatherProvider.getProvider().getCurrentWeather(this.coordinates);
+        String weather = this.followTower.getWeather(this.coordinates);
         String reportMessage = this.messageBuilder.buildMessage(weather);
 
         p.printToFile(reportMessage);

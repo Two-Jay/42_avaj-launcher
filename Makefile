@@ -11,9 +11,11 @@ compile :
 
 clean :
 	find * -name "*.class" -delete
+	rm -f sources.txt
+	rm -f simulation.txt
 
 run :
-	java kr.ft.avaj.simulator.Simulator $(FILE)
+	java kr.ft.avaj.simulator.main $(FILE)
 
 re :
 	@$(MAKE) clean

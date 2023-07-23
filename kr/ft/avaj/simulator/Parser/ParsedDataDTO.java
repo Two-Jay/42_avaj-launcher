@@ -2,13 +2,13 @@ package kr.ft.avaj.simulator.Parser;
 
 import java.util.ArrayList;
 
-import kr.ft.avaj.simulator.Aircraft.Flyable;
+import kr.ft.avaj.simulator.Parser.AircraftInfo.AircraftInfo;
 
 public class ParsedDataDTO {
     int simulationCount;
-    ArrayList<Flyable> aircrafts;
+    ArrayList<AircraftInfo> aircrafts;
 
-    public ParsedDataDTO(int simulationCount, ArrayList<Flyable> aircrafts) {
+    public ParsedDataDTO(int simulationCount, ArrayList<AircraftInfo> aircrafts) {
         this.simulationCount = simulationCount;
         this.aircrafts = aircrafts;
     }
@@ -17,7 +17,7 @@ public class ParsedDataDTO {
         return simulationCount;
     }
 
-    public ArrayList<Flyable> getAircrafts() {
+    public ArrayList<AircraftInfo> getAircrafts() {
         return aircrafts;
     }
 }

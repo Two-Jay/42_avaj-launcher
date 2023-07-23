@@ -1,6 +1,6 @@
 JAVAC = javac
 INPUT_SCENARIO_FILENAME = scenario.txt
-INPUT_SCENARIO_DIR = ./resources/scenario/
+INPUT_SCENARIO_DIR = $(CURDIR)/resource/scenario/
 INPUT_SCENARIO = $(INPUT_SCENARIO_DIR)$(INPUT_SCENARIO_FILENAME)
 
 all :

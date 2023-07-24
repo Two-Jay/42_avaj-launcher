@@ -17,15 +17,11 @@ public class Tower {
         }
     }
 
-    public void register(Flyable[] flyable) {
-        for (Flyable f : flyable) {
-            observers.add(f);
-        }
+    public void register(Flyable flyable) {
+        observers.add(flyable);
     }
 
-    public void unregister(Flyable[] flyable) {
-        for (Flyable f : flyable) {
-            observers.remove(f);
-        }
+    public void unregister(Flyable flyable) {
+        observers.remove(flyable);
     }
 }

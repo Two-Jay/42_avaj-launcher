@@ -21,15 +21,7 @@ public class Tower {
         observers.add(flyable);
     }
 
-    public void register(List<Flyable> flyables) {
-        observers.addAll(flyables);
-    }
-
     public void unregister(Flyable flyable) {
         observers.remove(flyable);
-    }
-
-    public void unregister(List<Flyable> flyables) {
-        observers.removeAll(flyables);
     }
 }

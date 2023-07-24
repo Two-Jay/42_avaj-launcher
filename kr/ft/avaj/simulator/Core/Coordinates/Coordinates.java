@@ -1,4 +1,4 @@
-package kr.ft.avaj.simulator.Core.Coordinate;
+package kr.ft.avaj.simulator.Core.Coordinates;
 
 enum WEATHER {
     SUN("SUN"),

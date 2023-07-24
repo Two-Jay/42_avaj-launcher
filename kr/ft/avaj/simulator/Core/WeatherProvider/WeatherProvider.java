@@ -2,7 +2,7 @@ package kr.ft.avaj.simulator.Core.WeatherProvider;
 
 import java.lang.Math;
 
-import kr.ft.avaj.simulator.Core.Coordinate.Coordinates;
+import kr.ft.avaj.simulator.Core.Coordinates.Coordinates;
 
 public class WeatherProvider {
     private static String[] weather = { "RAIN", "FOG", "SUN", "SNOW" };

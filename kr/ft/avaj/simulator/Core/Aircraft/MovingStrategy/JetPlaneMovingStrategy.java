@@ -2,6 +2,7 @@ package kr.ft.avaj.simulator.Core.Aircraft.MovingStrategy;
 
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Exception.UnsupportedWeatherException;
+import kr.ft.avaj.simulator.Utils.SimulationMetaData;
 
 public class JetPlaneMovingStrategy implements MovingStrategy {
     public void move(Coordinates co) throws UnsupportedWeatherException {
@@ -21,6 +22,9 @@ public class JetPlaneMovingStrategy implements MovingStrategy {
                 break;
             default:
                 throw new UnsupportedWeatherException();
+        }
+        if (co.getHeight() > SimulationMetaData.heightMaximum) {
+            co.setHeight(SimulationMetaData.heightMaximum);
         }
     }
 }

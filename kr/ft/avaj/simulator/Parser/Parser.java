@@ -28,7 +28,7 @@ public class Parser {
         String[] tokens = sc.nextLine().split(" ");
         if (tokens.length != 1)
             throw new Exception("Invalid simulation count");
-        return Integer.parseInt(tokens[SimulationMetaData.getInstance().simulationCountIndex]);
+        return Integer.parseInt(tokens[SimulationMetaData.simulationCountIndex]);
     }
 
     private ArrayList<AircraftInfo> parseAircraftInformations(Scanner sc) throws Exception {

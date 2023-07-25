@@ -20,7 +20,7 @@ public class WeatherProvider {
     }
 
     public WEATHER getRandomWeather() {
-        int randIndex = (int) Math.floor(Math.random() * 4);
+        int randIndex = (int) Math.floor(Math.random() * weather.length);
         return WEATHER.of(weather[randIndex]);
     }
 

@@ -1,9 +1,10 @@
 package kr.ft.avaj.simulator.Core.Aircraft.MovingStrategy;
 
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
+import kr.ft.avaj.simulator.Exception.UnsupportedWeatherException;
 
 public class BaloonMovingStrategy implements MovingStrategy {
-    public void move(Coordinates co) {
+    public void move(Coordinates co) throws UnsupportedWeatherException {
         switch (co.getWeather()) {
             case SUN:
                 co.setLongitude(co.getLongitude() + 2);
@@ -19,7 +20,7 @@ public class BaloonMovingStrategy implements MovingStrategy {
                 co.setHeight(co.getHeight() - 15);
                 break;
             default:
-                break;
+                throw new UnsupportedWeatherException();
         }
     }
 }

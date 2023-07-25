@@ -25,13 +25,13 @@ enum JETPLANE_MESSAGE_FORMAT implements MESSAGEFORMAT {
         return weather;
     }
 
-    public static String getMessageByCurrentWeather(WEATHER weather) {
+    public static String getMessageByCurrentWeather(WEATHER weather) throws UnsupportedOperationException {
         for (JETPLANE_MESSAGE_FORMAT format : JETPLANE_MESSAGE_FORMAT.values()) {
             if (format.getWeather().equals(weather)) {
                 return format.getMessage();
             }
         }
-        return "Unknown weather";
+        throw new UnsupportedOperationException();
     }
 
 }

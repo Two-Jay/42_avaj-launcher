@@ -25,13 +25,13 @@ enum BALOON_MESSAGE_FORMAT implements MESSAGEFORMAT {
         return weather;
     }
 
-    public static String getMessageByCurrentWeather(WEATHER weather) {
+    public static String getMessageByCurrentWeather(WEATHER weather) throws UnsupportedOperationException {
         for (BALOON_MESSAGE_FORMAT format : BALOON_MESSAGE_FORMAT.values()) {
             if (format.getWeather().equals(weather)) {
                 return format.getMessage();
             }
         }
-        return "Unknown weather";
+        throw new UnsupportedOperationException();
     }
 
 }

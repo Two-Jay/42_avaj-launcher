@@ -1,9 +1,10 @@
 package kr.ft.avaj.simulator.Core.Aircraft.MovingStrategy;
 
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
+import kr.ft.avaj.simulator.Exception.UnsupportedWeatherException;
 
 public class JetPlaneMovingStrategy implements MovingStrategy {
-    public void move(Coordinates co) {
+    public void move(Coordinates co) throws UnsupportedWeatherException {
         switch (co.getWeather()) {
             case SUN:
                 co.setLatitude(co.getLatitude() + 10);
@@ -19,7 +20,7 @@ public class JetPlaneMovingStrategy implements MovingStrategy {
                 co.setHeight(co.getHeight() - 7);
                 break;
             default:
-                break;
+                throw new UnsupportedWeatherException();
         }
     }
 }

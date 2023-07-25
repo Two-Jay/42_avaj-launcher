@@ -1,5 +1,7 @@
 package kr.ft.avaj.simulator.Core.Aircraft.Coordinates;
 
+import kr.ft.avaj.simulator.Exception.UnsupportedWeatherException;
+
 public enum WEATHER {
     SUN("SUN"),
     RAIN("RAIN"),
@@ -16,13 +18,13 @@ public enum WEATHER {
         return weather;
     }
 
-    public static WEATHER of(String weather) {
+    public static WEATHER of(String weather) throws UnsupportedWeatherException {
         for (WEATHER w : WEATHER.values()) {
             if (w.getWeather().equals(weather)) {
                 return w;
             }
         }
-        return null;
+        throw new UnsupportedWeatherException();
     }
 
     public String toString() {

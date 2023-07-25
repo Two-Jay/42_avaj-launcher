@@ -12,7 +12,6 @@ public class Baloon extends Aircraft {
 
     public Baloon(Long id, String name, Coordinates coordinates) {
         super(id, name, coordinates);
-
     }
 
     public void updateConditions() {

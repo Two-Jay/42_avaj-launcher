@@ -3,10 +3,10 @@ package kr.ft.avaj.simulator.Core;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ft.avaj.simulator.Core.Aircraft.AircraftFactory;
 import kr.ft.avaj.simulator.Core.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.CoordinatesFactory;
-import kr.ft.avaj.simulator.Core.Aircraft.Factory.AircraftFactory;
 import kr.ft.avaj.simulator.Core.Tower.WeatherTower;
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 import kr.ft.avaj.simulator.Parser.AircraftInfo.AircraftInfo;

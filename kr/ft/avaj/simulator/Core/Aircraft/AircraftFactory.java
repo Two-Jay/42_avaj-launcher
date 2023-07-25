@@ -1,9 +1,5 @@
-package kr.ft.avaj.simulator.Core.Aircraft.Factory;
+package kr.ft.avaj.simulator.Core.Aircraft;
 
-import kr.ft.avaj.simulator.Core.Aircraft.Flyable;
-import kr.ft.avaj.simulator.Core.Aircraft.Baloon;
-import kr.ft.avaj.simulator.Core.Aircraft.Helicopter;
-import kr.ft.avaj.simulator.Core.Aircraft.JetPlane;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 
 public class AircraftFactory {

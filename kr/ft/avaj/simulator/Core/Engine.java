@@ -9,5 +9,15 @@ public abstract class Engine {
         return new EngineCore(parsedDataDTO);
     }
 
-    public abstract void run();
+    public void run() {
+        try {
+            this.runProcess();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            Printer.getInstance().deleteFile();
+            System.exit(1);
+        }
+    }
+
+    protected abstract void runProcess();
 }

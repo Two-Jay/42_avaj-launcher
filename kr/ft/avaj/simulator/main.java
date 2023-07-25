@@ -13,10 +13,13 @@ public class main {
 
     public static void main(String[] args) {
         try {
+            if (args.length != 1) {
+                throw new Exception("Invalid number of arguments");
+            }
             Engine.initilize(runParser(args[0]))
-                .run();
+                    .run();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println("Error on avaj-launcher's Parser - " + e);
             System.exit(1);
         }
     }

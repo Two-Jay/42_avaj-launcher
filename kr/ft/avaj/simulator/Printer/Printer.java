@@ -45,4 +45,9 @@ public class Printer {
             System.exit(1);
         }
     }
+
+    public void deleteFile() {
+        File file = new File(filepath);
+        file.delete();
+    }
 }

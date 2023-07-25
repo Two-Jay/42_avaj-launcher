@@ -9,7 +9,7 @@ public class EngineCore extends Engine {
         re = new Resource(data);
     }
 
-    public void run() {
+    public void runProcess() {
         for (int i = 0; i < this.re.getSimulationCount(); i++) {
             this.re.getWeatherTower().conditionsChanged();
         }

@@ -33,7 +33,6 @@ enum HELICOPTER_MESSAGE_FORMAT implements MESSAGEFORMAT {
         }
         return "Unknown weather";
     }
-
 }
 
 public class HelicopterLogger extends AircraftLogger {

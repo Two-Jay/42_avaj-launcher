@@ -2,7 +2,7 @@ package kr.ft.avaj.simulator.Core.Aircraft;
 
 import kr.ft.avaj.simulator.Core.Coordinates.Coordinates;
 
-public class Aircraft {
+public class Aircraft extends Flyable {
     protected long id;
     protected String name;
     protected Coordinates coordinates;
@@ -11,5 +11,10 @@ public class Aircraft {
         this.id = id;
         this.name = name;
         this.coordinates = coordinates;
+    }
+
+    @Override
+    public void updateConditions() {
+        throw new UnsupportedOperationException("Unimplemented method 'updateConditions'");
     }
 }

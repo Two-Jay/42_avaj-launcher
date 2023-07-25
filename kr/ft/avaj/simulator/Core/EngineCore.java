@@ -14,5 +14,4 @@ public class EngineCore extends Engine {
             System.out.println("Simulation " + i);
         }
     }
-
 }

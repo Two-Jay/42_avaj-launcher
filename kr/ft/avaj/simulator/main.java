@@ -4,7 +4,7 @@ import kr.ft.avaj.simulator.Core.Engine;
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 import kr.ft.avaj.simulator.Parser.Parser;
 
-public class Main {
+public class main {
 
     public static ParsedDataDTO runParser(String filepath) throws Exception {
         Parser parser = Parser.getINSTANCE();

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ft.avaj.simulator.Core.Aircraft.Flyable;
-import kr.ft.avaj.simulator.Core.Aircraft.Aircraft;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.CoordinatesFactory;
 import kr.ft.avaj.simulator.Core.Aircraft.Factory.AircraftFactory;

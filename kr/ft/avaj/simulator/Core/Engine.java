@@ -2,8 +2,10 @@ package kr.ft.avaj.simulator.Core;
 
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 
-public interface Engine {
-    public Engine initilize(ParsedDataDTO parsedDataDTO);
+public abstract class Engine {
+    public static Engine initilize(ParsedDataDTO parsedDataDTO) {
+        return new EngineCore(parsedDataDTO);
+    }
 
-    public void run();
+    public abstract void run();
 }

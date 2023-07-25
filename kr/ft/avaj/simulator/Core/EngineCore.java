@@ -2,20 +2,17 @@ package kr.ft.avaj.simulator.Core;
 
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 
-public class EngineCore implements Engine {
-    private Integer simulationCount;
+public class EngineCore extends Engine {
+    private Resource re;
 
-    private EngineCore(ParsedDataDTO parsedDataDTO) {
-        this.simulationCount = parsedDataDTO.getSimulationCount();
-    }
-
-    public Engine initilize(ParsedDataDTO parsedDataDTO) {
-        return new EngineCore(parsedDataDTO);
+    protected EngineCore(ParsedDataDTO data) {
+        re = new Resource(data);
     }
 
     public void run() {
-        for (int i = 0; i < this.simulationCount; i++) {
+        for (int i = 0; i < this.re.getSimulationCount(); i++) {
             System.out.println("Simulation " + i);
         }
     }
+
 }

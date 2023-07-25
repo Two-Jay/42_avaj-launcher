@@ -11,11 +11,11 @@ public class AircraftFactory {
 
     public Flyable newAircraft(String type, String name, Coordinates coordinates) {
         if (type.equals("Baloon")) {
-            return new Baloon(this.nextId(), name, coordinates);
+            return new Baloon(AircraftFactory.nextId(), name, coordinates);
         } else if (type.equals("JetPlane")) {
-            return new JetPlane(this.nextId(), name, coordinates);
+            return new JetPlane(AircraftFactory.nextId(), name, coordinates);
         } else if (type.equals("Helicopter")) {
-            return new Helicopter(this.nextId(), name, coordinates);
+            return new Helicopter(AircraftFactory.nextId(), name, coordinates);
         }
         return null;
     }

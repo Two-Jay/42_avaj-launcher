@@ -2,10 +2,8 @@ package kr.ft.avaj.simulator.Parser;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import kr.ft.avaj.simulator.Parser.AircraftInfo.AircraftInfo;
-
-import java.io.File;
 import kr.ft.avaj.simulator.Utils.SimulationMetaData;
+import java.io.File;
 
 public class Parser {
     private Parser() {

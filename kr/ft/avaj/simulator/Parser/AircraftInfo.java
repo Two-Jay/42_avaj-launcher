@@ -1,4 +1,4 @@
-package kr.ft.avaj.simulator.Parser.AircraftInfo;
+package kr.ft.avaj.simulator.Parser;
 
 public class AircraftInfo {
     public String type;
@@ -35,7 +35,7 @@ public class AircraftInfo {
         this.height = builder.height;
     }
 
-    public static class Builder implements AircraftInfoBuilder {
+    public static class Builder {
         private String type;
 
         private String name;
@@ -46,37 +46,31 @@ public class AircraftInfo {
 
         private int height;
 
-        @Override
-        public AircraftInfoBuilder setType(String type) {
+        public Builder setType(String type) {
             this.type = type;
             return this;
         }
 
-        @Override
-        public AircraftInfoBuilder setName(String name) {
+        public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
-        @Override
-        public AircraftInfoBuilder setLongitude(int longitude) {
+        public Builder setLongitude(int longitude) {
             this.longitude = longitude;
             return this;
         }
 
-        @Override
-        public AircraftInfoBuilder setLatitude(int latitude) {
+        public Builder setLatitude(int latitude) {
             this.latitude = latitude;
             return this;
         }
 
-        @Override
-        public AircraftInfoBuilder setHeight(int height) {
+        public Builder setHeight(int height) {
             this.height = height;
             return this;
         }
 
-        @Override
         public AircraftInfo build() {
             return new AircraftInfo(this);
         }

@@ -3,16 +3,16 @@ package kr.ft.avaj.simulator.Printer.Logger.AircraftLooger;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.WEATHER;
 
-enum BALOON_MESSAGE_FORMAT implements MESSAGEFORMAT {
-    SUN(WEATHER.SUN, "Let's enjoy the good weather and take some pics."),
-    RAIN(WEATHER.RAIN, "Damn you rain! You messed up my baloon."),
-    FOG(WEATHER.FOG, "I can't see anything!. We are going down."),
-    SNOW(WEATHER.SNOW, "It's snowing. We're gonsna crash.");
+enum HELICOPTER_MESSAGE_FORMAT implements MESSAGEFORMAT {
+    SUN(WEATHER.SUN, "This is hot like our roters."),
+    RAIN(WEATHER.RAIN, "It's raining. Better watch out for lightings."),
+    FOG(WEATHER.FOG, "It's foggy. Be careful not to crash."),
+    SNOW(WEATHER.SNOW, "My rotor is going to freeze!");
 
     private WEATHER weather;
     private String message;
 
-    BALOON_MESSAGE_FORMAT(WEATHER weather, String message) {
+    HELICOPTER_MESSAGE_FORMAT(WEATHER weather, String message) {
         this.weather = weather;
         this.message = message;
     }
@@ -26,7 +26,7 @@ enum BALOON_MESSAGE_FORMAT implements MESSAGEFORMAT {
     }
 
     public static String getMessageByCurrentWeather(WEATHER weather) {
-        for (BALOON_MESSAGE_FORMAT format : BALOON_MESSAGE_FORMAT.values()) {
+        for (HELICOPTER_MESSAGE_FORMAT format : HELICOPTER_MESSAGE_FORMAT.values()) {
             if (format.getWeather().equals(weather)) {
                 return format.getMessage();
             }
@@ -36,8 +36,8 @@ enum BALOON_MESSAGE_FORMAT implements MESSAGEFORMAT {
 
 }
 
-public class BaloonLogger extends AircraftLogger {
+public class HelicopterLogger extends AircraftLogger {
     protected String getLogMessageByWeather(Coordinates co) {
-        return BALOON_MESSAGE_FORMAT.getMessageByCurrentWeather(co.getWeather());
+        return HELICOPTER_MESSAGE_FORMAT.getMessageByCurrentWeather(co.getWeather());
     }
 }

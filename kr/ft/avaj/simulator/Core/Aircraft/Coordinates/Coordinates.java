@@ -32,4 +32,12 @@ public class Coordinates {
     public void setWeather(String weather) {
         this.weather = WEATHER.of(weather);
     }
+
+    public void setWeather(WEATHER weather) {
+        this.weather = weather;
+    }
+
+    public String toString() {
+        return String.format("(%d LON, %d LAT %d HEI)", longitude, latitude, height);
+    }
 }

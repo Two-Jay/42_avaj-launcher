@@ -11,7 +11,7 @@ public class EngineCore extends Engine {
 
     public void run() {
         for (int i = 0; i < this.re.getSimulationCount(); i++) {
-            System.out.println("Simulation " + i);
+            this.re.getWeatherTower().conditionsChanged();
         }
     }
 }

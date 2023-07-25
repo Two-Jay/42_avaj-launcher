@@ -11,7 +11,7 @@ public class WeatherProvider {
     private WeatherProvider() {
     }
 
-    public WeatherProvider getINSTANCE() {
+    public static WeatherProvider getInstance() {
         return Holder.INSTANCE;
     }
 

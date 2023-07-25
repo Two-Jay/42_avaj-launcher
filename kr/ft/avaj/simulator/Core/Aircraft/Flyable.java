@@ -10,4 +10,8 @@ public abstract class Flyable {
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
     }
+
+    public String toString() {
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
 }

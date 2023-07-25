@@ -8,8 +8,8 @@ import kr.ft.avaj.simulator.Core.Aircraft.Flyable;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.CoordinatesFactory;
 import kr.ft.avaj.simulator.Core.Tower.WeatherTower;
+import kr.ft.avaj.simulator.Parser.AircraftInfo;
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
-import kr.ft.avaj.simulator.Parser.AircraftInfo.AircraftInfo;
 
 public class Resource {
     private int simulationCount;

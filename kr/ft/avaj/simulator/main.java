@@ -13,7 +13,8 @@ public class main {
 
     public static void main(String[] args) {
         try {
-            Engine.initilize(runParser(args[0])).run();
+            Engine.initilize(runParser(args[0]))
+                .run();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.exit(1);

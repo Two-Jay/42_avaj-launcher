@@ -8,6 +8,5 @@ public class JetPlane extends Aircraft {
     }
 
     public void updateConditions() {
-
     }
 }

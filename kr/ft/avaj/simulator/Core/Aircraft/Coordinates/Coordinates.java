@@ -1,35 +1,5 @@
 package kr.ft.avaj.simulator.Core.Aircraft.Coordinates;
 
-enum WEATHER {
-    SUN("SUN"),
-    RAIN("RAIN"),
-    FOG("FOG"),
-    SNOW("SNOW");
-
-    private String weather;
-
-    WEATHER(String weather) {
-        this.weather = weather;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
-    public static WEATHER of(String weather) {
-        for (WEATHER w : WEATHER.values()) {
-            if (w.getWeather().equals(weather)) {
-                return w;
-            }
-        }
-        return null;
-    }
-
-    public String toString() {
-        return weather;
-    }
-}
-
 public class Coordinates {
     private int longitude;
     private int latitude;
@@ -40,6 +10,7 @@ public class Coordinates {
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;
+        this.weather = WEATHER.SUN;
     }
 
     public int getLongitude() {
@@ -56,14 +27,6 @@ public class Coordinates {
 
     public WEATHER getWeather() {
         return weather;
-    }
-
-    public String getWeatherByString() {
-        return weather.toString();
-    }
-
-    public void setWeather(WEATHER weather) {
-        this.weather = weather;
     }
 
     public void setWeather(String weather) {

@@ -13,7 +13,7 @@ public abstract class Engine {
         try {
             this.runProcess();
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println(e);
             Printer.getInstance().deleteFile();
             System.exit(1);
         }

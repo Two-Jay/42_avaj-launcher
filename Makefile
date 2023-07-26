@@ -27,6 +27,10 @@ err :
 	@$(MAKE) compile
 	java kr.ft.avaj.simulator.main $(ERR_TEST_SCENARIO)
 
+land :
+	@$(MAKE) compile
+	java kr.ft.avaj.simulator.main $(INPUT_SCENARIO_DIR)/land_test.txt
+
 re :
 	@$(MAKE) clean
 	@$(MAKE) all

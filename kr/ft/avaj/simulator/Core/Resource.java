@@ -13,7 +13,7 @@ public class Resource {
     private WeatherTower weatherTower;
 
     protected Resource(ParsedDataDTO data) {
-        this.simulationCount = data.getSimulationCount();
+        this.simulationRepeatCount = data.getSimulationCount();
         this.weatherTower = new WeatherTower();
         initFlyables(data);
     }
@@ -27,8 +27,8 @@ public class Resource {
         }
     }
 
-    public int getSimulationCount() {
-        return this.simulationCount;
+    public int getSimulationRepeatCount() {
+        return this.simulationRepeatCount;
     }
 
     public WeatherTower getWeatherTower() {

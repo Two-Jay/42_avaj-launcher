@@ -57,7 +57,8 @@ public class Parser {
     private Boolean validateCoordinates(Integer longitude, Integer latitude, Integer height) {
         if (longitude < SimulationMetaData.longitudeMinimum
                 || latitude < SimulationMetaData.latitudeMinimum
-                || height < SimulationMetaData.latitudeMinimum)
+                || height < SimulationMetaData.heightMinimum
+                || height > SimulationMetaData.heightMaximum)
             throw new IllegalArgumentException("Invalid coordinates");
         return true;
     }

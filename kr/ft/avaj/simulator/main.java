@@ -3,6 +3,7 @@ package kr.ft.avaj.simulator;
 import kr.ft.avaj.simulator.Core.Engine;
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 import kr.ft.avaj.simulator.Parser.Parser;
+import kr.ft.avaj.simulator.Printer.Printer;
 
 public class main {
 
@@ -19,7 +20,8 @@ public class main {
             Engine.initilize(runParser(args[0]))
                     .run();
         } catch (Exception e) {
-            System.err.println("Error on avaj-launcher's Parser - " + e);
+            System.err.println(e);
+            Printer.getInstance().deleteFile();
             System.exit(1);
         }
     }

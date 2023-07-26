@@ -47,6 +47,9 @@ public class Printer {
     }
 
     public void deleteFile() {
+        if (filepath == null) {
+            return;
+        }
         File file = new File(filepath);
         file.delete();
     }

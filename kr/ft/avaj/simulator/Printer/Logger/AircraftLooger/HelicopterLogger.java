@@ -4,7 +4,7 @@ import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.WEATHER;
 import kr.ft.avaj.simulator.Exception.UnsupportedWeatherException;
 
-enum HELICOPTER_MESSAGE_FORMAT implements MESSAGEFORMAT {
+enum HELICOPTER_MESSAGE_FORMAT {
     SUN(WEATHER.SUN, "This is hot like our roters."),
     RAIN(WEATHER.RAIN, "It's raining. Better watch out for lightings."),
     FOG(WEATHER.FOG, "It's foggy. Be careful not to crash."),

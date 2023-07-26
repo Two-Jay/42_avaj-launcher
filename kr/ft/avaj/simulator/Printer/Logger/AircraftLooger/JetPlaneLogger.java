@@ -3,7 +3,7 @@ package kr.ft.avaj.simulator.Printer.Logger.AircraftLooger;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.WEATHER;
 
-enum JETPLANE_MESSAGE_FORMAT implements MESSAGEFORMAT {
+enum JETPLANE_MESSAGE_FORMAT {
     SUN(WEATHER.SUN, "It's sunny. Let's enjoy the good weather and take some pics."),
     RAIN(WEATHER.RAIN, "It's raining. Better watch out for lightings."),
     FOG(WEATHER.FOG, "It's foggy. Be careful not to crash."),

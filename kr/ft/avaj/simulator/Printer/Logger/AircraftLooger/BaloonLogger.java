@@ -3,7 +3,7 @@ package kr.ft.avaj.simulator.Printer.Logger.AircraftLooger;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.Coordinates;
 import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.WEATHER;
 
-enum BALOON_MESSAGE_FORMAT implements MESSAGEFORMAT {
+enum BALOON_MESSAGE_FORMAT {
     SUN(WEATHER.SUN, "Let's enjoy the good weather and take some pics."),
     RAIN(WEATHER.RAIN, "Damn you rain! You messed up my baloon."),
     FOG(WEATHER.FOG, "I can't see anything!. We are going down."),

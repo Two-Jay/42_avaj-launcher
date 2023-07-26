@@ -24,9 +24,4 @@ public class Helicopter extends Aircraft {
             logger.logCurrentWeather(this, coordinates);
         }
     }
-
-    private void land() {
-        logger.logLanding(this, coordinates);
-        this.weatherTower.unregister(this);
-    }
 }

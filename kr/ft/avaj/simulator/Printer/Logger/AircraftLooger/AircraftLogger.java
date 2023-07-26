@@ -6,7 +6,7 @@ import kr.ft.avaj.simulator.Core.Aircraft.Coordinates.WEATHER;
 import kr.ft.avaj.simulator.Printer.Logger.Logger;
 
 enum AIRCRAFT_LANDING_MESSAGE_FORMAT implements MESSAGEFORMAT {
-    LAND("landing");
+    LAND("We are happy to announce that we have landed.");
 
     private String message;
 

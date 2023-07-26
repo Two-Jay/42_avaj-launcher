@@ -43,15 +43,15 @@ public class Parser {
     private AircraftInfo initAircraftInfo(String[] tokens) throws Exception {
         if (tokens.length != 5)
             throw new Exception("Invalid aircraft data");
-        AircraftInfo aircraftInfo = new AircraftInfo.Builder()
+        AircraftInfo ai = new AircraftInfo.Builder()
                 .setType(tokens[0])
                 .setName(tokens[1])
                 .setLongitude(Integer.parseInt(tokens[2]))
                 .setLatitude(Integer.parseInt(tokens[3]))
                 .setHeight(Integer.parseInt(tokens[4]))
                 .build();
-        validateCoordinates(aircraftInfo.getLongitude(), aircraftInfo.getLatitude(), aircraftInfo.getHeight());
-        return aircraftInfo;
+        validateCoordinates(ai.getLongitude(), ai.getLatitude(), ai.getHeight());
+        return ai;
     }
 
     private Boolean validateCoordinates(Integer longitude, Integer latitude, Integer height) {

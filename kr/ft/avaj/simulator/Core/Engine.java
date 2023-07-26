@@ -10,7 +10,13 @@ public abstract class Engine {
     }
 
     public void run() {
-        this.runProcess();
+        try {
+            this.runProcess();
+        } catch (Exception e) {
+            System.err.println(e);
+            Printer.getInstance().deleteFile();
+            System.exit(1);
+        }
     }
 
     protected abstract void runProcess();

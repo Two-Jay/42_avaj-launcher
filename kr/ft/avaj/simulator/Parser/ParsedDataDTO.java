@@ -3,16 +3,16 @@ package kr.ft.avaj.simulator.Parser;
 import java.util.ArrayList;
 
 public class ParsedDataDTO {
-    int simulationCount;
+    int simulationRepeatCount;
     ArrayList<AircraftInfo> AircraftInfos;
 
     public ParsedDataDTO(int simulationCount, ArrayList<AircraftInfo> aircrafts) {
-        this.simulationCount = simulationCount;
+        this.simulationRepeatCount = simulationCount;
         this.AircraftInfos = aircrafts;
     }
 
     public int getSimulationCount() {
-        return simulationCount;
+        return simulationRepeatCount;
     }
 
     public ArrayList<AircraftInfo> getAircraftInfos() {

@@ -9,7 +9,7 @@ import kr.ft.avaj.simulator.Parser.AircraftInfo;
 import kr.ft.avaj.simulator.Parser.ParsedDataDTO;
 
 public class Resource {
-    private int simulationCount;
+    private int simulationRepeatCount;
     private WeatherTower weatherTower;
 
     protected Resource(ParsedDataDTO data) {

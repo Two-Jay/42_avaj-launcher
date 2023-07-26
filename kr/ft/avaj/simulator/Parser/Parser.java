@@ -50,6 +50,15 @@ public class Parser {
                 .setLatitude(Integer.parseInt(tokens[3]))
                 .setHeight(Integer.parseInt(tokens[4]))
                 .build();
+        validateCoordinates(aircraftInfo.getLongitude(), aircraftInfo.getLatitude(), aircraftInfo.getHeight());
         return aircraftInfo;
+    }
+
+    private Boolean validateCoordinates(Integer longitude, Integer latitude, Integer height) {
+        if (longitude < SimulationMetaData.longitudeMinimum
+                || latitude < SimulationMetaData.latitudeMinimum
+                || height < SimulationMetaData.latitudeMinimum)
+            throw new IllegalArgumentException("Invalid coordinates");
+        return true;
     }
 }

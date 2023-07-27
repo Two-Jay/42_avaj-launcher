@@ -1,6 +1,6 @@
 #/bin/bash
 
-err_file_list=( "err_AircraftType_00" "err_AircraftType_01" "err_AircraftType_02" "err_AircraftType_03" "err_AircraftType_04"
+err_file_list=( "err_AircraftType_00" "err_AircraftType_01" "err_AircraftType_02" "err_AircraftType_03" "err_AircraftType_04" "err_AircraftType_05"
     "err_count_00" "err_count_01" "err_count_02" "err_height_00" "err_height_01" "err_leaked_00" "err_leaked_01" "err_leaked_02" "err_leaked_03" "err_leaked_04"
     "err_negetive_00" "err_negetive_01" "err_negetive_02" "err_nodata")
 

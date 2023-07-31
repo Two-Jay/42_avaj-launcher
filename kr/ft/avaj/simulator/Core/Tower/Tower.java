@@ -12,7 +12,7 @@ public class Tower {
         observers = new ArrayList<Flyable>();
     }
 
-    public void conditionsChanged() {
+    protected void conditionsChanged() {
         for (int i = 0; i < observers.size(); i++) {
             observers.get(i).updateConditions();
         }
